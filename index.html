@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>InsureAI - Insurance Website</title>
@@ -407,6 +408,13 @@ padding:35px;
 border-bottom:1px solid #eee;
 }
 
+@media(max-width:768px){
+
+.top-features{
+grid-template-columns:1fr;
+}
+
+}
 .feature{
 text-align:center;
 }
@@ -420,11 +428,20 @@ margin-bottom:8px;
 color:#777;
 }
 
+@media(max-width:768px){
+
 .quote-form{
-padding:40px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:25px;
+grid-template-columns:1fr;
+}
+
+.full-width{
+grid-column:1;
+}
+
+.quote-btn{
+grid-column:1;
+}
+
 }
 
 .form-group{
